@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import AnnouncementDialog from "@/components/AnnouncementDialog";
+import { Analytics } from "@vercel/analytics/next"
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -38,6 +40,8 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col bg-thai-crimson font-lato text-white">
+        <Analytics />
+        <AnnouncementDialog />
         {children}
       </body>
     </html>
