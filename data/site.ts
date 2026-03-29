@@ -1,10 +1,19 @@
 export const site = {
   name: "Good Thai",
+  url: "https://goodthairestaurant.co.nz", // ← update when domain is confirmed
   tagline: "Authentic Thai cuisine crafted with tradition, passion, and the finest ingredients — in a chic, welcoming environment.",
   meta: {
-    title: "Good Thai — Authentic Thai Restaurant",
+    title: "Good Thai — Authentic Thai Restaurant in Christchurch",
     description:
-      "Experience authentic Thai cuisine in a chic, elegant environment. Dine in, takeaway, fully licensed / BYO.",
+      "Good Thai Restaurant in Burnside, Christchurch. Authentic Thai cuisine — dine in or takeaway. Fully licensed & BYO. Open Tue–Sun for lunch & dinner.",
+    keywords: [
+      "Thai restaurant Christchurch",
+      "Thai food Burnside",
+      "authentic Thai cuisine NZ",
+      "Good Thai Kendal Avenue",
+      "Thai takeaway Christchurch",
+      "Thai dine in Christchurch",
+    ],
   },
 };
 

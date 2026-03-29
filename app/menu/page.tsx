@@ -7,9 +7,16 @@ import MenuClient from "@/components/menu/MenuClient";
 import { menuItems } from "@/data/menu";
 
 export const metadata: Metadata = {
-  title: "Menu — Good Thai",
+  title: "Menu",
   description:
-    "Browse our full menu of 40+ authentic Thai dishes, available for lunch and dinner.",
+    "Browse the full Good Thai menu — starters, soups, curries, noodles, rice & salads. Authentic Thai dishes available for lunch and dinner in Burnside, Christchurch.",
+  alternates: { canonical: "/menu" },
+  openGraph: {
+    title: "Menu | Good Thai",
+    description:
+      "Explore 40+ authentic Thai dishes at Good Thai, Burnside Christchurch. Lunch & dinner menus with curries, noodles, soups and more.",
+    url: "/menu",
+  },
 };
 
 export default async function MenuPage({
