@@ -42,7 +42,10 @@ export default function RestaurantJsonLd() {
         closes: "21:00",
       },
     ],
-    sameAs: ["https://www.facebook.com/GOODTHAI166/"],
+    sameAs: [
+      "https://www.facebook.com/GOODTHAI166/",
+      "https://www.tripadvisor.com/Restaurant_Review-g255118-d6890378-Reviews-Good_Thai_Restaurant-Christchurch_Canterbury_Region_South_Island.html",
+    ],
   };
 
   return (

@@ -71,5 +71,6 @@ export const footer = {
   ],
   socials: [
     { label: "Facebook", href: "https://www.facebook.com/GOODTHAI166/", icon: "facebook" as const },
+    { label: "TripAdvisor", href: "https://www.tripadvisor.com/Restaurant_Review-g255118-d6890378-Reviews-Good_Thai_Restaurant-Christchurch_Canterbury_Region_South_Island.html", icon: "tripadvisor" as const },
   ],
 };
