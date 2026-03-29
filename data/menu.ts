@@ -128,7 +128,7 @@ export const menuItems: MenuItem[] = [
     name: "Thai Fish Cakes",
     description: "Blended fish fillet with chilli paste & herbs",
     price: 8,
-    dinnerPrice: 19,
+    dinnerPrice: 12,
     image: "/menu_pic/6.jpeg",
     mealPeriod: "both",
     dishType: "starters",
