@@ -34,7 +34,7 @@ interface Props {
   activePeriod?: MealPeriod;
 }
 
-export default function MenuCard({ item }: Props) {
+export default function MenuCard({ item, activePeriod = "lunch" }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const descRef = useRef<HTMLParagraphElement>(null);
@@ -171,44 +171,34 @@ export default function MenuCard({ item }: Props) {
         {/* ── Price ────────────────────────────────────────────────────── */}
         <div className="mt-auto pt-2 border-t border-thai-gold/15">
           {item.priceTag ? (
-            /* Per-protein pricing */
+            /* Per-protein pricing — show dinnerPrice when in dinner period */
             <div className="flex flex-col gap-1">
-              {item.priceTag.map((pt) => {
-                const hasDinner = pt.dinnerPrice != null && pt.dinnerPrice !== pt.price;
+              {item.priceTag.filter((pt) =>
+                !pt.mealPeriod || pt.mealPeriod === activePeriod
+              ).map((pt) => {
+                const displayPrice =
+                  activePeriod === "dinner" && pt.dinnerPrice != null
+                    ? pt.dinnerPrice
+                    : pt.price;
                 return (
                   <div key={pt.title} className="flex items-baseline justify-between gap-2">
                     <span className="text-white/50 text-xs font-lato truncate">
                       {pt.title}
                     </span>
-                    {hasDinner ? (
-                      <span className="text-white/60 text-xs font-lato shrink-0">
-                        <span className="text-thai-gold font-bold text-sm">${pt.price}</span>
-                        {" · "}
-                        <span className="text-thai-gold font-bold text-sm">${pt.dinnerPrice}</span>
-                      </span>
-                    ) : (
-                      <span className="text-thai-gold font-bold text-sm font-lato shrink-0">
-                        ${pt.price}
-                      </span>
-                    )}
+                    <span className="text-thai-gold font-bold text-sm font-lato shrink-0">
+                      ${displayPrice}
+                    </span>
                   </div>
                 );
               })}
             </div>
           ) : hasDoublePricing ? (
-            <p className="text-white/60 text-xs font-lato">
-              Lunch{" "}
-              <span className="text-thai-gold font-bold text-base">
-                ${item.price}
-              </span>
-              {" · "}Dinner{" "}
-              <span className="text-thai-gold font-bold text-base">
-                ${item.dinnerPrice}
-              </span>
+            <p className="text-thai-gold font-bold text-xl font-lato">
+              ${activePeriod === "dinner" ? item.dinnerPrice : item.price}
             </p>
           ) : (
             <p className="text-thai-gold font-bold text-xl font-lato">
-              ${item.price.toFixed(2)}
+              ${item.price}
             </p>
           )}
         </div>
