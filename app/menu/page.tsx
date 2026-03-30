@@ -19,13 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function MenuPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ period?: string; type?: string; tags?: string }>;
-}) {
-  const params = await searchParams;
-
+export default function MenuPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -68,9 +62,6 @@ export default async function MenuPage({
 
       <MenuClient
         menuItems={menuItems}
-        initialPeriod={params.period}
-        initialType={params.type}
-        initialTags={params.tags}
       />
 
       <Footer />

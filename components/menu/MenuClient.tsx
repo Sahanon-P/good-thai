@@ -8,57 +8,15 @@ import MenuCard from "./MenuCard";
 import MenuFilters from "./MenuFilters";
 import MenuFloatingPDF from "./MenuFloatingPDF";
 
-const validDishTypes: DishType[] = [
-  "starters",
-  "mains",
-  "noodles-rice",
-  "soups",
-  "salads",
-];
-const validTags: DietaryTag[] = [
-  "chicken",
-  "beef",
-  "pork",
-  "seafood",
-  "vegetarian",
-  "gluten-free",
-];
-
-function parsePeriod(v?: string): MealPeriod {
-  return v === "dinner" ? "dinner" : "lunch";
-}
-function parseDishType(v?: string): "all" | DishType {
-  return validDishTypes.includes(v as DishType) ? (v as DishType) : "all";
-}
-function parseTags(v?: string): DietaryTag[] {
-  if (!v) return [];
-  return v
-    .split(",")
-    .filter((t) => validTags.includes(t as DietaryTag)) as DietaryTag[];
-}
 
 interface Props {
   menuItems: MenuItem[];
-  initialPeriod?: string;
-  initialType?: string;
-  initialTags?: string;
 }
 
-export default function MenuClient({
-  menuItems,
-  initialPeriod,
-  initialType,
-  initialTags,
-}: Props) {
-  const [activePeriod, setActivePeriod] = useState<MealPeriod>(
-    parsePeriod(initialPeriod)
-  );
-  const [activeDishType, setActiveDishType] = useState<"all" | DishType>(
-    parseDishType(initialType)
-  );
-  const [activeTags, setActiveTags] = useState<DietaryTag[]>(
-    parseTags(initialTags)
-  );
+export default function MenuClient({ menuItems }: Props) {
+  const [activePeriod, setActivePeriod] = useState<MealPeriod>("lunch");
+  const [activeDishType, setActiveDishType] = useState<"all" | DishType>("all");
+  const [activeTags, setActiveTags] = useState<DietaryTag[]>([]);
 
   function toggleTag(tag: DietaryTag) {
     setActiveTags((prev) =>

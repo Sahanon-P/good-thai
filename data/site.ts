@@ -62,12 +62,12 @@ export const footer = {
     "Authentic Thai cuisine crafted with tradition, passion, and the finest ingredients — in a chic, welcoming environment.",
   legalNote: "Dine In · Takeaway · Fully Licensed · BYO",
   quickLinks: [
-    { label: "Home", href: "#home" },
-    { label: "Menu", href: "#menu" },
-    { label: "About", href: "#about" },
-    { label: "Chefs", href: "#chefs" },
-    { label: "Contact", href: "#contact" },
-    { label: "Book a Table", href: "#contact" },
+    { label: "Home", href: "/#home" },
+    { label: "Menu", href: "/#menu" },
+    { label: "About", href: "/#about" },
+    { label: "Chefs", href: "/#chefs" },
+    { label: "Contact", href: "/#contact" },
+    { label: "Book a Table", href: "/#contact" },
   ],
   socials: [
     { label: "Facebook", href: "https://www.facebook.com/GOODTHAI166/", icon: "facebook" as const },
