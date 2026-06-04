@@ -4,8 +4,8 @@ export const contact = {
     city: "Christchurch, New Zealand 8053",
   },
   phone: {
-    display: "(03) 9123 4567",
-    href: "tel:+6439123456",
+    display: "(03) 357 9575",
+    href: "tel:+6433579575",
   },
   email: {
     display: "goodthaibp@gmail.com",
